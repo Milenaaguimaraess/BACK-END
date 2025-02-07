@@ -7,4 +7,10 @@
 #set sql_safe_updates =0;
 #update employees set last_name = "Neves" where last_name = "Neve"
 
-select * from employees where last_name = "Neves"
+#select * from employees where last_name = "Neves"
+
+#SELECT * FROM employees where last_name = "Neves";
+
+SET SQL_SAFE_UPDATES =0;
+update employees set last_name = "Neve" where last_name = "Neves";
+SELECT * FROM employees where last_name = "Neve";
