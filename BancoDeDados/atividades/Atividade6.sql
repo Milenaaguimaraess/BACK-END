@@ -33,6 +33,22 @@ nome_produto VARCHAR(100),
  INSERT INTO produtos (nome_produto, preco, estoque) values ("Pen Drive",135.50,56);
  INSERT INTO produtos (nome_produto, preco, estoque) values ("Notebook",30.00,190);
 
+SELECT * FROM produtos WHERE nome_produto like "Smart%";
+
+CREATE TABLE clientes(
+id_cliente INT PRIMARY KEY NOT NULL auto_increment, 
+nome_cliente VARCHAR(100) NOT NULL, 
+estado VARCHAR(100) NOT NULL 
+);
+
+ INSERT INTO clientes (nome_cliente, estado) values ("Magazine","SP");
+ INSERT INTO clientes (nome_cliente, estado) values ("Casas Brasileiras","MG");
+ INSERT INTO clientes (nome_cliente, estado) values ("Zema","RJ");
+ INSERT INTO clientes (nome_cliente, estado) values ("Novo Mundo","DF");
+ 
+ SELECT * FROM clientes where estado in ("SP","MG","RJ");
+ SELECT * FROM clientes;
+
 
  
  
