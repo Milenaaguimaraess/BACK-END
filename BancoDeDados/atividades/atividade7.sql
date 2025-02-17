@@ -23,8 +23,12 @@ INSERT INTO Autores (nome,nacionalidade) VALUES ("Domingos Pellegrini","Brasilei
 INSERT INTO livros (titulo,ano_publicacao,id_autor) VALUES ("Corte de Espinhos e Rosas",2016,1);
 INSERT INTO livros (titulo,ano_publicacao,id_autor) VALUES ("Trono de Video",2013,1);
 INSERT INTO livros (titulo,ano_publicacao,id_autor) VALUES ("Quarta Asa",2023,2);
-INSERT INTO livros (titulo,ano_publicacao,id_autor) VALUES ("Turma da Mõnica Jovem",2012,3);
+INSERT INTO livros (titulo,ano_publicacao,id_autor) VALUES ("Turma da Mônica Jovem",2012,3);
 INSERT INTO livros (titulo,ano_publicacao,id_autor) VALUES ("A Árvore que dava Dinheiro",1991,4);
 
 SELECT * FROM Autores;
 SELECT * FROM livros;
+
+SELECT * FROM livros inner JOIN Autores ON livros.id_autor = Autores.id_autor;
+SELECT * FROM livros INNER JOIN Autores ON livros.id_livro = Autores.id_autor;
+SELECT * FROM livros WHERE id_autor = "1"; 
