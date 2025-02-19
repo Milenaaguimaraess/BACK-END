@@ -34,6 +34,8 @@ INSERT INTO pedidos (data_pedido,id_cliente) values ("30/02/2019",6);
 select * from clientes;
 
 -- Liste os pedidos e os nomes dos clientes que fizeram esses pedidos.
-SELECT pedidos.id_pedido , clientes.nome FROM pedidos inner join clientes ON pedidos.id_cliente, = clientes.id_cliente;
+SELECT pedidos.id_pedido , clientes.nome FROM pedidos inner join clientes ON pedidos.id_cliente = clientes.id_cliente;
 -- Liste todos os clientes e os pedidos que fizeram (mesmo que não tenham feito pedidos).
-SELECT clientes.nome , pedidos.id_pedido FROM clientes right join pedidos on pedidos.id_cliente = clientes.id_cliente;
+SELECT clientes.nome , pedidos.id_pedido FROM clientes left join pedidos on pedidos.id_cliente = clientes.id_cliente;
+-- Mostre quantos pedidos cada cliente fez.
+SELECT clientes.nome , count(pedidos.id_pedido) from clientes left join pedidos on pedidos.id_cliente = clientes.id_cliente group by pedidos.id_cliente;
