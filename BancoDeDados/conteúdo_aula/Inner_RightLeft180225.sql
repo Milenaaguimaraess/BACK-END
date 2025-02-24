@@ -32,6 +32,7 @@ select pessoa.nome , endereco.rua from endereco right join pessoa on pessoa.id =
 -- left junta as duas tabelas, priorizando a tabela da esquerda
 select pessoa.nome , endereco.rua from endereco left join pessoa on pessoa.id = endereco.id;
 
+-- usando o db abaixo para aprender sobre group by:
 use employees;
 select * from employees;
 select * from dept_emp;
