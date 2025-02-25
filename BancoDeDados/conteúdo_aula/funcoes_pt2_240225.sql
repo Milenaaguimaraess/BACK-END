@@ -12,7 +12,7 @@ SELECT CONCAT_WS(" * ",first_name,last_name) from employees;
 
 -- UCASE -> U-UPPER - maiusculo
 -- LCASE -> L-LOWER -  minusculo
-SELECT first_name , UCASE(first_name) from employees;
+SELECT first_name,last_name, UCASE(first_name) from employees;
 
 -- RECLACE -> TERMO N QUER, TERMO DESEJADO, troquei o nome george por um cara traquilo
 SELECT REPLACE(first_name , "Georgi","Un cara traquilo") FROM employees WHERE emp_no; 
