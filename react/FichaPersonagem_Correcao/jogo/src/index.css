@@ -1,0 +1,19 @@
+*{
+  padding: 0%;
+  margin: 0%;
+}
+
+:root{
+  --bGBody : rgb(134, 32, 32);
+  --branco : rgb(234,234,234);
+}
+
+body{
+  color: var(--branco);
+  background-color: var(--bGBody);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
