@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotografia Gelada</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header>
+        <div>
+            <h1>Fotografia Gelada</h1>
+            <button id="login">Login</button>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+        <!-- popUp Login -->
+        <div class="loginPopUp" id="LoginPop">
+            <form id="formLogin">
+                <div class="headerPop">
+                    <h2>Login</h2>
+                </div>
+                <div class="inputPop">
+                    <label for="usuario">Usuário</label>
+                    <input type="text" id="usuario" required>
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" required>
+                </div>
+                <div class="btnPop">
+                    <button id="closePop">Cancelar</button>
+                    <button type="submit">Entrar</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- PopUp Comentário -->
+        <div class="boxComment" id="boxComment">
+            <div class="headerComment">
+                <h2>Comentarios</h2>
+                <img src="./Icones/x.svg" alt="X" id="closeComments">
+            </div>
+            <div class="imgBox">
+                <img src="" alt="Imagem Selecionada">
+            </div>
+            <div class="basicInfos">
+                <div class="likeBox">
+                    <img src="./Icones/coração.svg" alt="like" class="like">
+                    <span>0</span>
+                    <span>Curtidas</span>
+                </div>
+                <div class="chatBox">
+                    <img src="./Icones/chat-preto.svg" alt="Comment">
+                    <span>0</span>
+                    <span>Comentarios</span>
+                </div>
+            </div>
+            <div class="sendComment">
+                <img src="./Icones/chat-preto.svg" alt="clat">
+                <input type="text" name="comentario" id="comentario" placeholder="Adicionar comentário">
+                <button id="sendComment"><img src="./Icones/send.svg" alt="send"></button>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="item img1">
+                <img src="./Imagens/Everest.jpg" alt="Everest">
+                <div class="interac">
+                    <!-- o SPAM trabalha com linhas, diferente da DIV q trabalha com linhas -->
+                    <span>12</span>
+                    <img src="./Icones/coração.svg" alt="Curtir">
+                    <!-- o 3 é a quantidade -->
+                    <span>3</span>
+                    <img class="chat" src="./Icones/chat-branco.svg" alt="Comentários">
+                </div>
+            </div>
+
+            <div class="item img2">
+                <img src="./Imagens/MonteFuji.jpg" alt="Monte Fuji">
+                <div class="interac">
+                    <span>12</span>
+                    <img src="./Icones/coração.svg" alt="Curtir">
+                    <span>3</span>
+                    <img class="chat" src="./Icones/chat-branco.svg" alt="Comentários">
+                </div>
+            </div>
+
+            <div class="item img3">
+                <img src="./Imagens/AlpesSuiços.jpg" alt="Alpes Suiços">
+                <div class="interac">
+                    <span>12</span>
+                    <img src="./Icones/coração.svg" alt="Curtir">
+                    <span>3</span>
+                    <img class="chat" src="./Icones/chat-branco.svg" alt="Comentários">
+                </div>
+            </div>
+
+            <div class="item img4">
+                <img src="./Imagens/GrandCanyon.jpg" alt="Grand Canyon">
+                <div class="interac">
+                    <span>12</span>
+                    <img src="./Icones/coração.svg" alt="Curtir">
+                    <span>3</span>
+                    <img class="chat" src="./Icones/chat-branco.svg" alt="Comentários">
+                </div>
+            </div>
+
+            <div class="item img5">
+                <img src="./Imagens/MonteBranco.jpg" alt="Monte Branco">
+                <div class="interac">
+                    <span>12</span>
+                    <img src="./Icones/coração.svg" alt="Curtir">
+                    <span>3</span>
+                    <img class="chat" src="./Icones/chat-branco.svg" alt="Comentários">
+                </div>
+            </div>
+
+            <div class="item img6">
+                <img src="./Imagens/MonteElbrus.jpg" alt="Monte Elbrus">
+                <div class="interac">
+                    <span>12</span>
+                    <img src="./Icones/coração.svg" alt="Curtir">
+                    <span>3</span>
+                    <img class="chat" src="./Icones/chat-branco.svg" alt="Comentários">
+                </div>
+            </div>
+
+            <div class="item img7">
+                <img src="./Imagens/PicoPikes.jpg" alt="Pico Pikes">
+                <div class="interac">
+                    <span>12</span>
+                    <img src="./Icones/coração.svg" alt="Curtir">
+                    <span>3</span>
+                    <img class="chat" src="./Icones/chat-branco.svg" alt="Comentários">
+                </div>
+            </div>
+
+            <div class="item img8">
+                <img src="./Imagens/Huandoy.jpg" alt="Huandoy">
+                <div class="interac">
+                    <span>12</span>
+                    <img src="./Icones/coração.svg" alt="Curtir">
+                    <span>3</span>
+                    <img class="chat" src="./Icones/chat-branco.svg" alt="Comentários">
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <h1>Fotografia Gelada</h1>
+        <!-- LISTA = UL -->
+        <ul>
+            <li><a href="https://x.com/home"><img src="./Icones/Twitter.svg" alt="Twitter"></a></li>
+            <li><a href="https://instagram.com"><img src="./Icones/Instagram.svg" alt="Instagram"></a></li>
+            <li><a href="https://youtube.com"><img src="./Icones/youtube.svg" alt="Youtube"></a></li>
+            <li><a href="https://tiktok.com"><img src="./Icones/tiktok.svg" alt="TikTok"></a></li>
+        </ul>
+
+        <span>Copyright - 2025</span>
+    </footer>
+    <script src="./Script/popUp.js"></script>
+    <script src="./Script/PopUpPicture.js"></script>
+    <script src="./Script/loadPage.js"></script>
+</body>
+
+</html>
