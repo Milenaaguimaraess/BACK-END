@@ -1,26 +1,39 @@
-// simular uma API (adicionar as img, comentários etc)
-const dados = [
-    { src: "./Imagens/Everest.jpg", likes: 5, comentarios: 2 },
-    { src: "./Imagens/MonteFuji.jpg", likes: 3, comentarios: 4 },
-    { src: "./Imagens/AlpesSuiços.jpg", likes: 4, comentarios: 5 },
-    { src: "./Imagens/GrandCanyon.jpg", likes: 11, comentarios: 6 },
-    { src: "./Imagens/MonteBranco.jpg", likes: 6, comentarios: 1 },
-    { src: "./Imagens/MonteElbrus.jpg", likes: 12, comentarios: 3 },
-    { src: "./Imagens/PicoPikes.jpg", likes: 22, comentarios: 8 },
-    { src: "./Imagens/Huandoy.jpg", likes: 16, comentarios: 0 },
-];
+document.addEventListener("DOMContentLoaded", () => {
+    const URL = 'http://localhost:8080/api/imagens';
+    const container = document.querySelectorAll('.item');
 
-const itensGaleria = document.querySelector(".item");
-itensGaleria.forEach((item, index) => {
-    const img = item.querySelector("img");
-    // COMENTÁRIOS  
-    const spans = item.querySelectorAll(".interec span");
-    // querySelector = seleciona só um
-    // querySelectorAll = seleciona mais de um// querySelector = seleciona só um
-    // querySelectorAll = seleciona mais de um
-    img.src = dados[index].src;
-    spans[0].textContent = dados[index].likes;
-    spans[1].textContent = dados[index].comentarios;
-
+    fetch(URL, {
+        method: 'GET',
+        headers: {
+            'Content-Type': application / json
+        },
+    })
+    then((res) => {
+        if (!res.ok) {
+            throw new Error('Erro na resposta do servidor' + res.status);
+        }
+        return res.json();
+    })
+        .then((data) => {
+            console.log("Dados Recebidos" + data)
+            const dados = data.dados;
+            dados.forEach((dados, index) => {
+                const itemDiv = container[index];
+                if (itemDiv) {
+                    const imgElement = itemDiv.querySelector('img');
+                    imgElement.src = dados.link || imgElement.src;
+                    imgElement.id = 'image-${dados.id}';
+                    const likeSpan = itemDiv.querySelector
+                        ('interac span:nth-child(1)');
+                    if (likeSpan) {
+                        like.textContent = dados.likes || '0';
+                    }
+                    const comentariosSpan = itemDiv.querySelector('.interac span: mth-Children(3)');
+                    if (comentariosSpan) {
+                        comentariosSpan.textContent
+                        = dados.comentarios || '0';
+                    }
+                }
+            });
+        })
 })
-

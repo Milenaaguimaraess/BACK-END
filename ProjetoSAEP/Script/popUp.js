@@ -1,19 +1,62 @@
-const loginBtn = document.getElementById("login");
-const loginPop = document.getElementById("LoginPop");
-const closePop = document.getElementById("closePop");
+const popUp = document.getElementById('LoginPop');
 
-loginBtn.addEventListener("click!", ()=>{
-    loginPopUp.style.display = "flex";
+document.getElementById('closePop').addEventListener
+    ('click', (event) => {
+        event.preventDefault();
+        popUp.style.display = "none";
     });
 
-    closePop.addEventListener("click", (event)=>{
+document.getElementById('login').addEventListener('click',
+    (event) => {
         event.preventDefault();
-        loginPopUp.style.display ="none"
+        popUp.style.display = "flex"
     });
 
-    const formLogin = document.getElementById("formLogin");
-    formLogin.addEventListener("submit",(event) =>{
+document.getElementById('formLogin').addEventListener
+    ('submit', (event) => {
         event.preventDefault();
-        alert("Login realizado");
-        loginPopUp.style.display = "none";
+        const usuario = document.getElementById('usuario').
+            value;
+
+        const password = document.getElementById('password').
+            value;
+
+        const data = {
+            usuario,
+            password
+        }
+
+        const URL = 'http://localhost?8080/api/login'
+
+        fetch(URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+
+        then((res) => {
+            if (!res.ok) {
+                throw new Error('Erro na resposta do servidor'
+                    + res.status);
+            }
+            return res.json();
+
+        })
+
+            .then((data) => {
+                console.log(data);
+                localStorage.setItem('userId', data.userId);
+                localStorage.setItem('logado', data.logado);
+
+                if (data.logado == true) {
+                    popUp.style.display = "none";
+                }
+                alert(data.message)
+            })
+            .catch(erro => {
+                console.erro('Erro', error);
+                alert('Ocorreu um erro ao enviar o formulário');
+            });
     })
